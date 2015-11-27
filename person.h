@@ -10,9 +10,9 @@ class Person
 public:
     Person();
     Person(string n, string g, int a, int dob, int dod);
-
-    friend ostream& operator << (ostream &out, const Person& p);
-    friend ifstream& operator >> (ifstream &in, const Person& p);
+    void readPerson(string n, string g, int a, int dob, int dod);
+    friend ifstream& operator >>(ifstream& ins, Person& per);
+    friend ostream& operator << (ostream& out, Person& per);
 
 private:
     string name;
