@@ -9,13 +9,15 @@ class Person
 {
 public:
     Person();
-    Person(string n, int a, int dob, int dod);
+    Person(string n, string g, int a, int dob, int dod);
 
 private:
     string name;
+    string gender;
     int age;
     int dayOfBirth;
     int dayOfDeath;
+
 };
 
 #endif // PERSON_H

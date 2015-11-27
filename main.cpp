@@ -1,12 +1,14 @@
 #include <QCoreApplication>
 #include <iostream>
+#include "person.h"
 using namespace std;
 
-int main(int argc, char *argv[])
+int main()
 {
-    cout << "hello";
-    QCoreApplication a(argc, argv);
+    Person person;
+    vector<person> vec;
 
-    return a.exec();
+
+    return 0;
 }
 
