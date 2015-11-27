@@ -14,9 +14,11 @@ void Interface::pickOption()
     cout << "4 - Exit." << endl;
 }
 
-void pressNumber()
+void Interface::pressNumber()
 {
     int numb;
+    pickOption();
+    cin >> numb;
 
     if (numb > 0 && numb < 5 )
     {
@@ -39,5 +41,7 @@ void pressNumber()
 
        }while(numb != 4);
      }
+    else
+        cout << "Wrong input! Choose again" << endl;
     
 }
