@@ -18,3 +18,14 @@ Person::Person(string n, string g, int a, int dob, int dod)
     dayOfDeath = dod;
 }
 
+ostream& operator << (ostream& out, const Person& p)
+{
+    out << "Name: " << p.name << endl;
+    out << "Gender: " << p.gender << endl;
+    out << "Age: " << p.age << endl;
+    out << "Day of birth: " << p.dayOfDeath << endl;
+    out << "Died: " << p.dayOfDeath << endl;
+    return out;
+}
+
+
