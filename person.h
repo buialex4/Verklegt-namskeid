@@ -11,6 +11,9 @@ public:
     Person();
     Person(string n, string g, int a, int dob, int dod);
 
+    friend ostream& operator << (ostream &out, const Person& p);
+    friend ifstream& operator >> (ifstream &in, const Person& p);
+
 private:
     string name;
     string gender;

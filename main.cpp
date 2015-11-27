@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     Person person;
-    vector<person> vec;
+    //vector<person> vec;
 
 
     return 0;
