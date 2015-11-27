@@ -18,16 +18,20 @@ void Interface::pressNumber()
 {
     int numb;
 
+    pickOption();
+    cin >> numb;
+
     if (numb > 0 && numb < 5 )
     {
        do
        {
+
             pickOption();
             cin >> numb;
     
-            switch(numb);
+           /* switch(numb);
 
-            /*case 1:
+            case 1:
                 break;
             case 2:
                 break;
@@ -38,6 +42,7 @@ void Interface::pressNumber()
 
 
        }while(numb != 4);
+
      }
     
 }

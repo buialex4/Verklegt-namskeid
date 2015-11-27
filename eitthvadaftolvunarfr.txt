@@ -1,0 +1,43 @@
+			=====Tölvunarfræðingar=====
+
+	Nafn		kyn		fæðingarár		dó árið
+Alan Turing		KK		1912			1954
+Grace Hopper		KK		1906			1992
+Tim Berners-Lee		KK		1955			--
+Donald Knuth		KK		1938			--
+Larry Page		KK 		1973			--
+John Mauchly		KK 		1907			1980
+John Backus		KK 		1924			2007
+John Von Neumann	KK		1903			1957
+John McCarthy		KK		1927			2011
+Claude Shannon		KK		1916			2001
+Ivan Sutherland		KK		1938			--
+Niklaus Wirth		KK		1934			--
+Sergey Brin		KK		1973			--
+Maurice Wilkes		KK  		1913			2010
+Larry Wall		KK		1954			--
+Ole-Johan Dahl 		KK		1931			2002
+Ada Lovelace 		KVK		1815			1852
+Anita Borg		KVK		1949			2003
+Leslie Lamport		KK		1941			--
+Hal Abelson		KK		1947			--
+Marvin Minsky		KK		1927			--
+Vint Cerf		KK		1943			--
+Ken Thompson		KK		1943			--
+Brian Kernighan		KK		1942			--
+Edsger W. Dijkstra	KK		1930			2002
+E. Allen Emerson	KK		1954			--
+Kristen Nygaard		KK		1926			2002
+Alan Kay		KK		1940			--
+Adele Goldberg		KVK		1945			--
+Fred Brooks		KK		1931			--
+Dennis Ritchie		KK		1941			2011
+Rodney Brooks		KK		1954			--
+Barry Boehm		KK		1935			--
+Edmund M. Clarke	KK		1945			--
+Stephen Cole Kleene	KK		1909			1994
+Per Brinch Hansen	KK		1938			2007
+Terry Winograd		KK		1946			--
+Stephen Cook		KK		1939			--
+Dorothy E. Denning	KVK		1945			--
+Nikolay Brusentsov	KK		1925			2014
