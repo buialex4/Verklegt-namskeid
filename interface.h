@@ -7,7 +7,7 @@ class Interface
 {
 public:
     Interface();
-    void readOutput();
+    void pickOption();
     void pressNumber();
 };
 

@@ -6,24 +6,38 @@ Interface::Interface()
 }
 
 
-void Interface::readOutput()
+void Interface::pickOption()
 {
-
     cout << "1 - Add computer scientist." << endl;
     cout << "2 - Show list." << endl;
-    cout << "3 - sort." << endl;
+    cout << "3 - Sort." << endl;
     cout << "4 - Exit." << endl;
 }
 
-/*void pressNumber()
+void pressNumber()
 {
     int numb;
-    while(numb > 0 && numb <= 4)
+
+    if (numb > 0 && numb < 5 )
     {
-        cin >> numb;
+       do
+       {
+            pickOption();
+            cin >> numb;
+    
+            switch(numb);
 
-        switch(numb)
+            /*case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break:
+            case 4:
+                break;*/
 
-    }
 
-}*/
+       }while(numb != 4);
+     }
+    
+}
