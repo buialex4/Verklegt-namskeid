@@ -1,4 +1,3 @@
-#include <QCoreApplication>
 #include <iostream>
 #include "person.h"
 #include "interface.h"

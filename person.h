@@ -9,15 +9,13 @@ class Person
 {
 public:
     Person();
-    Person(string n, string g, int a, int dob, int dod);
+    Person(string n, string g, int dob, int dod);
     void readPerson(string n, string g, int a, int dob, int dod);
-    friend ifstream& operator >>(ifstream& ins, Person& per);
-    friend ostream& operator << (ostream& out, Person& per);
+
 
 private:
     string name;
     string gender;
-    int age;
     int dayOfBirth;
     int dayOfDeath;
 

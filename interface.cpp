@@ -14,7 +14,7 @@ void Interface::pickOption()
     cout << "4 - Exit." << endl;
 }
 
-void pressNumber()
+void Interface::pressNumber()
 {
     int numb;
 
