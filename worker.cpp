@@ -22,10 +22,10 @@ void Worker::pressNumber()
          switch(numb)
          {
             case 1:
-                getPersonInfo();
+                createPerson();  //býr til eintak af persónu.
                 break;
             case 2:
-                printList();
+                printList();     //prentar út allar persónurnar.
                 break;
             case 3:
                 break;
@@ -36,7 +36,7 @@ void Worker::pressNumber()
     }while(true);
 }
 
-void Worker::getPersonInfo()
+void Worker::createPerson()
 {
     Person p = m_interface.getPersoninfo();
     m_datalayer.SaveData(p);

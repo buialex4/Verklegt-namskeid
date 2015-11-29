@@ -35,7 +35,6 @@ Person Interface::getPersoninfo()
 
 void Interface::printList(vector<Person> listOfPersons)
 {
-    cout << listOfPersons.size() << endl;
     for(unsigned int i = 0; i < listOfPersons.size(); i++)
     {
         cout << "Name: " << listOfPersons[i].getName() << endl;
@@ -43,5 +42,4 @@ void Interface::printList(vector<Person> listOfPersons)
         cout << "Born: " << listOfPersons[i].getDayOfBirth() << endl;
         cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
     }
-
 }

@@ -16,11 +16,11 @@ public:
     void pressNumber();
 
 private:
-    Interface m_interface;
-    DataLayer m_datalayer;
+    Interface m_interface; // Object af Interface fyrir Worker klasann.
+    DataLayer m_datalayer; // Object af DataLayer fyrir Worker klasann.
 
-    void getPersonInfo();
-    void printList();
+    void createPerson();  // Býr til eintak af persónu og vistar.
+    void printList();     // Prentar út allar persónurnar.
 
 };
 
