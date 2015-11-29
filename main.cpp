@@ -1,13 +1,11 @@
 #include <iostream>
-#include "person.dataLayer.h"
-#include "Interface.h"
-#include "worker.h"
+#include "Worker.h"
 
 using namespace std;
 
 int main()
 {
-  Interface inter;
+  Worker inter;
   inter.pressNumber();
 
 

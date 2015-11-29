@@ -14,35 +14,3 @@ void Interface::pickOption()
     cout << "4 - Exit." << endl;
 }
 
-void Interface::pressNumber()
-{
-    int numb;
-
-    pickOption();
-    cin >> numb;
-
-    if (numb > 0 && numb < 5 )
-    {
-       do
-       {
-
-            pickOption();
-            cin >> numb;
-    
-           /* switch(numb);
-
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break:
-            case 4:
-                break;*/
-
-
-       }while(numb != 4);
-
-     }
-    
-}

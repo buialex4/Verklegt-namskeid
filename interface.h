@@ -1,6 +1,8 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
+#include "person.dataLayer.h"
 #include <iostream>
+
 using namespace std;
 
 class Interface
@@ -8,7 +10,7 @@ class Interface
 public:
     Interface();
     void pickOption();
-    void pressNumber();
+    Person getPersoninfo();
 
 };
 
