@@ -28,7 +28,7 @@ Person Interface::getPersoninfo()
     cin >> gender;
     cout << "Enter date of birth (yyyy-mm-dd): " << endl;
     cin >> dayOfBirth;
-    cout << "Date of passing (yyyy-mm-dd): " << endl;
+    cout << "Date of passing (yyyy-mm-dd, Type - if he/she is alive): " << endl;
     cin >> dayOfDeath;
 
     return Person(name, gender, dayOfBirth, dayOfDeath);
