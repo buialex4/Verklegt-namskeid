@@ -1,6 +1,9 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
+#include "person.h"
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 class Interface
@@ -8,7 +11,9 @@ class Interface
 public:
     Interface();
     void pickOption();
-    void pressNumber();
+    Person getPersoninfo();
+    void printList(vector<Person> listOfPersons);
+
 };
 
 #endif // INTERFACE_H

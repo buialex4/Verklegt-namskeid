@@ -1,14 +1,13 @@
-#include <QCoreApplication>
 #include <iostream>
-#include "person.h"
-#include "Interface.h"
+#include "Worker.h"
+
 using namespace std;
 
 int main()
 {
-  Interface inter;
+  Worker inter;
+  inter.programInfo();
   inter.pressNumber();
-
 
     return 0;
 }

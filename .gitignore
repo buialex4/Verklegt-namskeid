@@ -16,6 +16,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+*.autosave
 
 # External tool builders
 .externalToolBuilders/

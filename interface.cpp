@@ -5,7 +5,6 @@ Interface::Interface()
 
 }
 
-
 void Interface::pickOption()
 {
     cout << "1 - Add computer scientist." << endl;
@@ -14,34 +13,35 @@ void Interface::pickOption()
     cout << "4 - Exit." << endl;
 }
 
-void Interface::pressNumber()
+Person Interface::getPersoninfo()
 {
-    int numb;
-    pickOption();
-    cin >> numb;
+    string name;
+    string gender;
+    string dayOfBirth;
+    string dayOfDeath;
 
-    if (numb > 0 && numb < 5)
+    cout << "Name of computer scientist: " << endl;
+    cin >> name;
+    cout << "Gender: " << endl;
+    cout << "Enter 'f' for a female and 'm' for a male." << endl;
+    cin >> gender;
+    cout << "Enter date of birth (yyyy-mm-dd): " << endl;
+    cin >> dayOfBirth;
+    cout << "Date of passing (yyyy-mm-dd, Type - if he/she is alive): " << endl;
+    cin >> dayOfDeath;
+
+    return Person(name, gender, dayOfBirth, dayOfDeath);
+}
+
+void Interface::printList(vector<Person> listOfPersons)
+{
+    cout << listOfPersons.size() << endl;
+    for(unsigned int i = 0; i < listOfPersons.size(); i++)
     {
-       do
-       {
-            pickOption();
-            cin >> numb;
-    
-           /* switch(numb);
+        cout << "Name: " << listOfPersons[i].getName() << endl;
+        cout << "Gender: " << listOfPersons[i].getGender() << endl;
+        cout << "Born: " << listOfPersons[i].getDayOfBirth() << endl;
+        cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
+    }
 
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break:
-            case 4:
-                break;*/
-
-
-       }while(numb != 4);
-
-     }
-    else
-        cout << "Wrong input!" << endl;
 }
