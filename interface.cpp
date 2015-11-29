@@ -21,13 +21,15 @@ Person Interface::getPersoninfo()
     int dayOfBirth;
     int dayOfDeath;
 
+    system("cls");
+
     cout << "Name of computer scientist: " << endl;
     cin >> name;
     cout << "Gender (f/m): " << endl;
     cin >> gender;
     cout << "Enter year of birth (yyyy): " << endl;
     cin >> dayOfBirth;
-    cout << "Year of passing (yyyy, Type -1 if he/she is alive): " << endl;
+    cout << "Year of passing (yyyy, Type -1 if scientist is alive): " << endl;
     cin >> dayOfDeath;
 
     return Person(name, gender, dayOfBirth, dayOfDeath);
@@ -35,11 +37,22 @@ Person Interface::getPersoninfo()
 
 void Interface::printList(vector<Person> listOfPersons)
 {
+    system("cls");
+
+    cout << "LIST OF COMPUTER SCIENTISTS" << endl;
+    cout << "---------------------------" << endl;
+
+
     for(unsigned int i = 0; i < listOfPersons.size(); i++)
     {
-        cout << "Name: " << listOfPersons[i].getName() << endl;
-        cout << "Gender: " << listOfPersons[i].getGender() << endl;
-        cout << "Born: " << listOfPersons[i].getDayOfBirth() << endl;
-        cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
+        if(i>0)
+            cout << endl;
+        cout << "Name:\t" << listOfPersons[i].getName() << endl;
+        cout << "Gender:\t" << listOfPersons[i].getGender() << endl;
+        cout << "Born:\t" << listOfPersons[i].getDayOfBirth() << endl;
+        if (listOfPersons[i].getDayOfDeath() > -1)
+            cout << "Died:\t" << listOfPersons[i].getDayOfDeath() << endl;
     }
+
+    cout << "---------------------------" << endl;
 }

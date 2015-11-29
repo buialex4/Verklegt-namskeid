@@ -12,7 +12,6 @@ class Worker
 {
 public:
     Worker();
-
     void pressNumber();
 
 private:
@@ -21,7 +20,6 @@ private:
 
     void createPerson();  // Býr til eintak af persónu og vistar.
     void printList();     // Prentar út allar persónurnar.
-
 };
 
 #endif // WORKER_H

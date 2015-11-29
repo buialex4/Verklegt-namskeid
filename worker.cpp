@@ -16,7 +16,6 @@ void Worker::pressNumber()
         cin >> numb;
         if((numb != '1') && (numb != '2') && (numb != '3') && (numb != '4'))
         {
-            system("cls");
             cout << numb << " is not an option. Pick again" << endl;
         }
 
@@ -39,14 +38,12 @@ void Worker::pressNumber()
 
 void Worker::createPerson()
 {
-    system("cls");
     Person p = m_interface.getPersoninfo();
     m_datalayer.SaveData(p);
 }
 
 void Worker::printList()
 {
-    system("cls");
     vector<Person> listOfPersons = m_datalayer.GetData();
     m_interface.printList(listOfPersons);
 }
