@@ -36,5 +36,12 @@ Person Interface::getPersoninfo()
 
 void Interface::printList(vector<Person> listOfPersons)
 {
-    cout << listOfPersons.size();
+    cout << listOfPersons.size() << endl;
+    for(int i = 0; i<listOfPersons.size(); i++)
+    {
+        cout << listOfPersons[i].getName() << endl;
+        cout << listOfPersons[i].getGender() << endl;
+        cout << listOfPersons[i].getDayOfBirth() << endl;
+        cout << listOfPersons[i].getDayOfDeath() << endl;
+    }
 }

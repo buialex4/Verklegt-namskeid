@@ -11,14 +11,16 @@ public:
     Person();
     Person(string n, string g, string dob, string dod);
     void readPerson(string n, string g, string dob, string dod);
-
+    string getName();
+    string getGender();
+    string getDayOfBirth();
+    string getDayOfDeath();
 
 private:
     string name;
     string gender;
     string dayOfBirth;
     string dayOfDeath;
-
 };
 
 #endif // PERSON_H

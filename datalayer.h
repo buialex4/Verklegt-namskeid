@@ -14,7 +14,6 @@ public:
 
 private:
     vector<Person> m_personList;
-
 };
 
 #endif // DATALAYER_H

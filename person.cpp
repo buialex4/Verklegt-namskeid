@@ -16,4 +16,22 @@ Person::Person(string n, string g, string dob, string dod)
     dayOfDeath = dod;
 }
 
+string Person::getName()
+{
+    return name;
+}
 
+string Person::getGender()
+{
+    return gender;
+}
+
+string Person::getDayOfBirth()
+{
+    return dayOfBirth;
+}
+
+string Person::getDayOfDeath()
+{
+    return dayOfDeath;
+}
