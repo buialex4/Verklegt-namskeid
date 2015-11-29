@@ -1,6 +1,8 @@
 #include <iostream>
-#include "person.h"
+#include "person.dataLayer.h"
 #include "Interface.h"
+#include "worker.h"
+
 using namespace std;
 
 int main()
