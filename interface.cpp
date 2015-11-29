@@ -14,3 +14,21 @@ void Interface::pickOption()
     cout << "4 - Exit." << endl;
 }
 
+Person getPersoninfo()
+{
+    string name;
+    string gender;
+    int dayOfBirth;
+    int dayOfDeath;
+
+    cout << "Name of computer scientist: " << endl;
+    cin >> name;
+    cout << "Gender: " << endl;
+    cout << "Enter 'f' for a female and 'm' for a male." << endl;
+    cin >> gender;
+    cout << "Enter date of birth (yyyy-mm-dd): " << endl;
+    cin >> dayOfBirth;
+    cout << "Date of passing (yyyy-mm-dd): " << endl;
+    cin >> dayOfDeath;
+}
+
