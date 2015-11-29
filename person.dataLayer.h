@@ -9,15 +9,15 @@ class Person
 {
 public:
     Person();
-    Person(string n, string g, int dob, int dod);
-    void readPerson(string n, string g, int a, int dob, int dod);
+    Person(string n, string g, string dob, string dod);
+    void readPerson(string n, string g, string dob, string dod);
 
 
 private:
     string name;
     string gender;
-    int dayOfBirth;
-    int dayOfDeath;
+    string dayOfBirth;
+    string dayOfDeath;
 
 };
 

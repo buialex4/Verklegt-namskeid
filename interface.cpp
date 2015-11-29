@@ -18,8 +18,8 @@ Person getPersoninfo()
 {
     string name;
     string gender;
-    int dayOfBirth;
-    int dayOfDeath;
+    string dayOfBirth;
+    string dayOfDeath;
 
     cout << "Name of computer scientist: " << endl;
     cin >> name;
@@ -30,5 +30,7 @@ Person getPersoninfo()
     cin >> dayOfBirth;
     cout << "Date of passing (yyyy-mm-dd): " << endl;
     cin >> dayOfDeath;
+
+    return Person(name, gender, dayOfBirth, dayOfDeath);
 }
 
