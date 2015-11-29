@@ -9,10 +9,14 @@ void Worker::pressNumber()
 {
     int numb;
 
-    do
+    while(numb != 4)
     {
         m_interface.pickOption();
         cin >> numb;
+        if(numb < 1 || numb > 4)
+        {
+            cout << numb << " is not an option. Pick again" << endl;
+        }
 
          switch(numb)
          {
@@ -26,5 +30,5 @@ void Worker::pressNumber()
                 break;
           }
 
-    }while(numb != 4);
+    }
 }
