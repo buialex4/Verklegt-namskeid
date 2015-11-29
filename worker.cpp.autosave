@@ -35,5 +35,6 @@ void Worker::pressNumber()
 void Worker::getPersonInfo()
 {
     Person p = m_interface.getPersoninfo();
+    
 }
 

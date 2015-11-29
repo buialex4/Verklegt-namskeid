@@ -11,10 +11,14 @@ class Worker
 {
 public:
     Worker();
+
     void pressNumber();
 
 private:
     Interface m_interface;
+
+    void getPersonInfo();
+
 };
 
 #endif // WORKER_H

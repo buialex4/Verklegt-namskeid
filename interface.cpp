@@ -14,7 +14,7 @@ void Interface::pickOption()
     cout << "4 - Exit." << endl;
 }
 
-Person getPersoninfo()
+Person Interface::getPersoninfo()
 {
     string name;
     string gender;
