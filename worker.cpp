@@ -1,5 +1,5 @@
 #include "Worker.h"
-#include "person.dataLayer.h"
+#include "person.h"
 
 Worker::Worker()
 {
@@ -23,9 +23,9 @@ void Worker::pressNumber()
          {
             case 1:
                 getPersonInfo();
-
                 break;
             case 2:
+                printList();
                 break;
             case 3:
                 break;
@@ -39,6 +39,11 @@ void Worker::pressNumber()
 void Worker::getPersonInfo()
 {
     Person p = m_interface.getPersoninfo();
-    
+    m_datalayer.SaveData(p);
 }
 
+void Worker::printList()
+{
+    vector<Person> listOfPersons = m_datalayer.GetData();
+    m_interface.printList(listOfPersons);
+}

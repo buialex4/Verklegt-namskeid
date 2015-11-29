@@ -1,6 +1,6 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
-#include "person.dataLayer.h"
+#include "person.h"
 #include <iostream>
 #include <vector>
 
@@ -12,7 +12,7 @@ public:
     Interface();
     void pickOption();
     Person getPersoninfo();
-    void printList(vector<Person> v);
+    void printList(vector<Person> listOfPersons);
 
 };
 

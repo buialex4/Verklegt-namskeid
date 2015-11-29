@@ -1,6 +1,7 @@
 #ifndef WORKER_H
 #define WORKER_H
 #include "interface.h"
+#include "datalayer.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,8 +17,10 @@ public:
 
 private:
     Interface m_interface;
+    DataLayer m_datalayer;
 
     void getPersonInfo();
+    void printList();
 
 };
 
