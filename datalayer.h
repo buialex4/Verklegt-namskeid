@@ -14,6 +14,7 @@ public:
 
 private:
     vector<Person> m_personList;
+    void createTestData();
 };
 
 #endif // DATALAYER_H

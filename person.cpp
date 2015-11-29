@@ -4,11 +4,11 @@ Person::Person()
 {
     name = "";
     gender = "";
-    dayOfBirth = "";
-    dayOfDeath = "";
+    dayOfBirth = 0;
+    dayOfDeath = 0;
 }
 
-Person::Person(string n, string g, string dob, string dod)
+Person::Person(string n, string g, int dob, int dod)
 {
     name = n;
     gender = g;
@@ -26,12 +26,12 @@ string Person::getGender()
     return gender;
 }
 
-string Person::getDayOfBirth()
+int Person::getDayOfBirth()
 {
     return dayOfBirth;
 }
 
-string Person::getDayOfDeath()
+int Person::getDayOfDeath()
 {
     return dayOfDeath;
 }

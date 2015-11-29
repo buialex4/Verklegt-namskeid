@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
   Worker inter;
-  inter.programInfo();
+  //inter.programInfo();
   inter.pressNumber();
 
     return 0;

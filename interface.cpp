@@ -7,6 +7,7 @@ Interface::Interface()
 
 void Interface::pickOption()
 {
+    cout << endl;
     cout << "1 - Add computer scientist." << endl;
     cout << "2 - Show list." << endl;
     cout << "3 - Sort." << endl;
@@ -17,17 +18,16 @@ Person Interface::getPersoninfo()
 {
     string name;
     string gender;
-    string dayOfBirth;
-    string dayOfDeath;
+    int dayOfBirth;
+    int dayOfDeath;
 
     cout << "Name of computer scientist: " << endl;
     cin >> name;
-    cout << "Gender: " << endl;
-    cout << "Enter 'f' for a female and 'm' for a male." << endl;
+    cout << "Gender (f/m): " << endl;
     cin >> gender;
-    cout << "Enter date of birth (yyyy-mm-dd): " << endl;
+    cout << "Enter year of birth (yyyy): " << endl;
     cin >> dayOfBirth;
-    cout << "Date of passing (yyyy-mm-dd, Type - if he/she is alive): " << endl;
+    cout << "Year of passing (yyyy, Type -1 if he/she is alive): " << endl;
     cin >> dayOfDeath;
 
     return Person(name, gender, dayOfBirth, dayOfDeath);
