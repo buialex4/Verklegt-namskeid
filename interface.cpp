@@ -20,16 +20,16 @@ void Interface::pressNumber()
     pickOption();
     cin >> numb;
 
-    if (numb > 0 && numb < 5 )
+    if (numb > 0 && numb < 5)
     {
        do
        {
             pickOption();
             cin >> numb;
     
-            switch(numb);
+           /* switch(numb);
 
-            /*case 1:
+            case 1:
                 break;
             case 2:
                 break;
@@ -40,8 +40,8 @@ void Interface::pressNumber()
 
 
        }while(numb != 4);
+
      }
     else
-        cout << "Wrong input! Choose again" << endl;
-    
+        cout << "Wrong input!" << endl;
 }
