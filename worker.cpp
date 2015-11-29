@@ -14,6 +14,10 @@ void Worker::pressNumber()
     {
         m_interface.pickOption();
         cin >> numb;
+        if(numb < 1 || numb > 4)
+        {
+            cout << numb << " is not an option. Pick again" << endl;
+        }
 
          switch(numb)
          {
@@ -35,5 +39,6 @@ void Worker::pressNumber()
 void Worker::getPersonInfo()
 {
     Person p = m_interface.getPersoninfo();
+    
 }
 
