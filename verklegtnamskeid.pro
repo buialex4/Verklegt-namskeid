@@ -9,11 +9,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     interface.cpp \
-    person.dataLayer.cpp \
-    Worker.cpp
+    Worker.cpp \
+    person.cpp \
+    datalayer.cpp
 
 HEADERS += \
     interface.h \
-    person.dataLayer.h \
-    Worker.h
+    Worker.h \
+    person.h \
+    datalayer.h
 
