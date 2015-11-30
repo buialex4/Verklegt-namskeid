@@ -11,8 +11,7 @@ void Interface::pickOption()
     cout << endl;
     cout << "1 - Add computer scientist." << endl;
     cout << "2 - Show list." << endl;
-    cout << "3 - Sort." << endl;
-    cout << "4 - Exit." << endl;
+    cout << "3 - Exit." << endl;
 }
 
 Person Interface::getPersoninfo()
@@ -48,5 +47,14 @@ void Interface::printList(vector<Person> listOfPersons)
         cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
         cout << endl;
         cout << "---------------------------" << endl;
+    }
 }
+
+char Interface::askToSort()
+{
+    char answer;
+    cout << "Do you want to sort the list? (y/n)" << endl;
+    cin >> answer;
+
+    return answer;
 }

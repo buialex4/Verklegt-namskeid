@@ -13,6 +13,7 @@ public:
     void pickOption();
     Person getPersoninfo();  // fær upplýsingar um persónu frá notanda.
     void printList(vector<Person> listOfPersons); // prentar út lista af persónum.
+    char askToSort();
 
 };
 
