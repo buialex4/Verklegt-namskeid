@@ -55,8 +55,6 @@ void Worker::pressNumber()
                 return;
           }
 
-
-
     }while(true);
 
 }
