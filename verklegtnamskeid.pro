@@ -1,6 +1,6 @@
 QT += core
 QT -= gui
-
+#comment
 TARGET = verklegtnamskeid
 CONFIG += console
 CONFIG -= app_bundle
