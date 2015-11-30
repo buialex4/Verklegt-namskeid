@@ -19,9 +19,10 @@ Person Interface::getPersoninfo()
     string gender;
     string dayOfBirth;
     string dayOfDeath;
+    cin.ignore();
 
     cout << "Name of computer scientist: " << endl;
-    cin >> name;
+    getline(cin,name);
     cout << "Gender: " << endl;
     cout << "Enter 'f' for a female and 'm' for a male." << endl;
     cin >> gender;
