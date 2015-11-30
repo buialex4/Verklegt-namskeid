@@ -12,7 +12,7 @@ class Worker
 {
 public:
     Worker();
-
+    void programInfo() const;
     void pressNumber();
 
 private:
@@ -21,6 +21,7 @@ private:
 
     void getPersonInfo();
     void printList();
+    //void sortList();
 
 };
 
