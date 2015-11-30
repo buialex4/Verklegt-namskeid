@@ -6,11 +6,8 @@ using namespace std;
 
 int main()
 {
-    Interface inter;
-
-    inter.programInfo();
-    inter.start();
-
+   Interface inter;
+   inter.start();
    return 0;
 }
 

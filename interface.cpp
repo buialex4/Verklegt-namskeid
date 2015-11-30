@@ -24,8 +24,7 @@ void Interface::pickOption()
     cout << endl;
     cout << "1 - Add computer scientist." << endl;
     cout << "2 - Show list." << endl;
-    cout << "3 - Sort." << endl;
-    cout << "4 - Exit." << endl;
+    cout << "3 - Exit." << endl;
 }
 
 Person Interface::getPersoninfo()
@@ -65,11 +64,27 @@ void Interface::printList(vector<Person> listOfPersons)
     }
 }
 
+char Interface::askToSort()
+{
+    char answer;
+    cout << "Do you want to sort the list? (y/n)" << endl;
+    cin >> answer;
+
+    return answer;
+}
+
+void Interface::askSort()
+{
+
+}
+
 void Interface::start()
 {
+    programInfo();
+
     int numb;
 
-    do
+    while(true)
     {
         pickOption();
 
@@ -81,10 +96,10 @@ void Interface::start()
         }
 
         //Error message
-        if(numb < 1 || numb > 4)
+        if(numb < 1 || numb > 3)
 
         {
-            cout << "The input you enterd is not an option. Pick again" << endl;
+            cout << "The input you entered is not a valid option. Pick again!" << endl;
         }
 
         switch(numb)
@@ -99,13 +114,13 @@ void Interface::start()
         {
             vector<Person> list = m_worker.getList(); // Sækja lista.
             printList(list);
+            askSort();
+
             break;
         }
         case 3:
-            break;
-        case 4:
             return;
         }
-    }while(true);
+    }
 
 }
