@@ -1,6 +1,7 @@
 #include "Worker.h"
 #include "person.h"
 #include "datalayer.h"
+#include <ctype.h>
 
 Worker::Worker()
 {
@@ -20,38 +21,42 @@ void Worker::programInfo() const
 
 void Worker::pressNumber()
 {
-    char numb;
+    int numb;
 
     do
     {
         m_interface.pickOption();
-        cin >> numb;
-<<<<<<< HEAD
+
+           cin >> numb;
+           if(cin.fail())
+           {
+               cin.clear();
+               cin.ignore(100,'\n');
+           }
 
         //Error message
         if(numb < 1 || numb > 4)
-=======
-        if((numb != '1') && (numb != '2') && (numb != '3') && (numb != '4'))
->>>>>>> 7c63fae1c1170c7f49f4dec127a205ed34b38b6c
+
         {
-            cout << numb << " is not an option. Pick again" << endl;
+            cout << "The input you enterd is not an option. Pick again" << endl;
         }
 
          switch(numb)
          {
-            case '1':
+            case 1:
                 createPerson();  //býr til eintak af persónu.
                 break;
-            case '2':
+            case 2:
                 printList();     //prentar út allar persónurnar.
                 break;
-            case '3':
+            case 3:
                 break;
-            case '4':
+            case 4:
                 return;
           }
 
     }while(true);
+
 }
 
 void Worker::createPerson()
