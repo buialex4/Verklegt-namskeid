@@ -11,8 +11,8 @@ class Interface
 public:
     Interface();
     void pickOption();
-    Person getPersoninfo();
-    void printList(vector<Person> listOfPersons);
+    Person getPersoninfo();  // fær upplýsingar um persónu frá notanda.
+    void printList(vector<Person> listOfPersons); // prentar út lista af persónum.
 
 };
 

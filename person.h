@@ -9,18 +9,18 @@ class Person
 {
 public:
     Person();
-    Person(string n, string g, string dob, string dod);
-    void readPerson(string n, string g, string dob, string dod);
+    Person(string n, string g, int dob, int dod);
+    void readPerson(string n, string g, int dob, int dod);
     string getName();
     string getGender();
-    string getDayOfBirth();
-    string getDayOfDeath();
+    int getDayOfBirth();
+    int getDayOfDeath();
 
 private:
     string name;
     string gender;
-    string dayOfBirth;
-    string dayOfDeath;
+    int dayOfBirth;
+    int dayOfDeath;
 };
 
 #endif // PERSON_H
