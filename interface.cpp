@@ -1,4 +1,5 @@
 #include "interface.h"
+#include "person.h"
 
 Interface::Interface()
 {
@@ -22,15 +23,14 @@ Person Interface::getPersoninfo()
     int dayOfDeath;
 
     cin.ignore();
-    //system("cls");
 
-    cout << "Name of computer scientist: " << endl;
+    cout << "Name of computer scientist: ";
     getline(cin, name);
-    cout << "Gender (f/m): " << endl;
+    cout << "Gender (f/m): ";
     cin >> gender;
-    cout << "Enter year of birth (yyyy): " << endl;
+    cout << "Enter year of birth (yyyy): ";
     cin >> dayOfBirth;
-    cout << "Year of passing (yyyy, Type -1 if scientist is alive): " << endl;
+    cout << "Year of passing (yyyy, Type -1 if scientist is alive): ";
     cin >> dayOfDeath;
 
     return Person(name, gender, dayOfBirth, dayOfDeath);
@@ -38,8 +38,6 @@ Person Interface::getPersoninfo()
 
 void Interface::printList(vector<Person> listOfPersons)
 {
-    //system("cls");
-
     cout << "LIST OF COMPUTER SCIENTISTS" << endl;
     cout << "---------------------------" << endl;
     for(unsigned int i = 0; i < listOfPersons.size(); i++)
@@ -49,7 +47,6 @@ void Interface::printList(vector<Person> listOfPersons)
         cout << "Born: " << listOfPersons[i].getDayOfBirth() << endl;
         cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
         cout << endl;
-
         cout << "---------------------------" << endl;
 }
 }

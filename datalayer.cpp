@@ -27,7 +27,7 @@ void swap(Person& p1, Person& p2)
 void DataLayer::createTestData()   // temp. prufu data.
 {
     Person computerduddi("Alan Turing", "m", 1936, 1989);
-    Person computerduddi2("Britta konn", "m", 1936, -1);
+    Person computerduddi2("Britta Konn", "m", 1936, -1);
     SaveData(computerduddi);
     SaveData(computerduddi2);
     swap(m_personList[0], m_personList[1]);

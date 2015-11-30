@@ -6,11 +6,11 @@ using namespace std;
 
 int main()
 {
-  Worker inter;
-  inter.programInfo();
-  inter.pressNumber();
+    Worker inter;
 
+    inter.programInfo();
+    inter.pressNumber();
 
-    return 0;
+   return 0;
 }
 
