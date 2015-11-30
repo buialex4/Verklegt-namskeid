@@ -48,13 +48,11 @@ void Worker::pressNumber()
                 break;
             case 2:
                 printList();     //prentar út allar persónurnar.
+                askSort();
                 break;
             case 3:
-                break;
-            case 4:
                 return;
           }
-
     }while(true);
 
 }
@@ -71,10 +69,7 @@ void Worker::printList()
     m_interface.printList(listOfPersons);
 }
 
-/*void sortList(vector<Person>& listOfPersons)
+void Worker::askSort()
 {
-    for(unsigned int i = 0; i < listOfPersons.size(); i++){
-
-        cout << listOfPersons.size()
-    }
-}*/
+    m_interface.askToSort();
+}
