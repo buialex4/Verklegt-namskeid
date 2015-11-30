@@ -15,6 +15,8 @@ public:
     void sortList();
     void createPerson(Person p);  // Býr til eintak af persónu og vistar.
     vector<Person> getList();    // sækja lista.
+    void saveAllData();
+
 private:
     DataLayer m_datalayer; // Object af DataLayer fyrir Worker klasann.
 };

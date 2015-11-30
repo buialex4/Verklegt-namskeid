@@ -8,10 +8,10 @@ using namespace std;
 
 DataLayer::DataLayer()
 {
-
+    GetData();
 }
 
-vector<Person> DataLayer::GetData()
+void DataLayer::GetData()
 {
     ifstream in_stream;
     in_stream.open("data.txt");
@@ -28,6 +28,10 @@ vector<Person> DataLayer::GetData()
         while (!in_stream.eof())
         {
             in_stream >> name;
+
+            if(in_stream.eof()) // Losnum við vandamál að það sé auð lína aftast
+                break;
+
             in_stream >> gender;
             in_stream >> dob;
             in_stream >> dod;
@@ -38,11 +42,9 @@ vector<Person> DataLayer::GetData()
 
         in_stream.close();
     }
-    return m_personList;  //Búi breytir þessu kannski? Ef það er
-}                         //eðlilegra að sækja gögnin í skrá í staðin
-                          //fyrir að sækja þau úr vector.
+}
 
-void DataLayer::SaveData(vector<Person>& m_personList)
+void DataLayer::SaveData()
 {
     ofstream out_stream;
     out_stream.open("data.txt");
@@ -57,22 +59,15 @@ void DataLayer::SaveData(vector<Person>& m_personList)
     out_stream.close();
 }
 
-void DataLayer::SaveData(Person p)
-{
-    ofstream out_stream;
-    out_stream.open("data.txt");
-
-    out_stream << p.getName() << endl;
-    out_stream << p.getGender() << endl;
-    out_stream << p.getDayOfBirth() << endl;
-    out_stream << p.getDayOfDeath() << endl;
-
-    out_stream.close();
-}
 
 void DataLayer::AddData(Person& p)
 {
     m_personList.push_back(p);
+}
+
+vector<Person> DataLayer::getPersonList()
+{
+    return m_personList;
 }
 
 void swap(Person& p1, Person& p2)

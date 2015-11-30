@@ -10,11 +10,16 @@ Worker::Worker()
 
 void Worker::createPerson(Person p)
 {
-    m_datalayer.SaveData(p);
+    m_datalayer.AddData(p);
 }
 
 vector<Person> Worker::getList()
 {
-    vector<Person> listOfPersons = m_datalayer.GetData();
-    return listOfPersons;
+    return m_datalayer.getPersonList();
 }
+
+void Worker::saveAllData()
+{
+    m_datalayer.SaveData();
+}
+

@@ -50,6 +50,7 @@ Person Interface::getPersoninfo()
 
 void Interface::printList(vector<Person> listOfPersons)
 {
+    cout << string(50, '\n');
     cout << "LIST OF COMPUTER SCIENTISTS" << endl;
     cout << "---------------------------" << endl;
     for(unsigned int i = 0; i < listOfPersons.size(); i++)
@@ -59,7 +60,6 @@ void Interface::printList(vector<Person> listOfPersons)
         cout << "Born: " << listOfPersons[i].getDayOfBirth() << endl;
         if (listOfPersons[i].getDayOfDeath() > 0)
             cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
-        cout << endl;
         cout << "---------------------------" << endl;
     }
 }
@@ -119,6 +119,7 @@ void Interface::start()
             break;
         }
         case 3:
+            m_worker.saveAllData();
             return;
         }
     }

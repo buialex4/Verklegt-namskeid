@@ -8,15 +8,15 @@ class DataLayer
 {
 public:
     DataLayer();
-    vector<Person> GetData(); // skilar öllum skráðum persónum.
-    void SaveData(vector<Person>& m_personList);  // vistar vector af persónum.
+    void SaveData();  // vistar vector af persónum.
     void AddData(Person& p); // bætir persónu við
-    void SaveData(Person p); // vistar eina persónu
-
+    vector<Person> getPersonList(); // sækir m_personList.
 
 private:
+    void GetData(); // sækir allar persónur úr skrá og setur inn í vectorinn.
     vector<Person> m_personList; // geymir lista af persónum.
     void createTestData();      // temp. prufu data.
+
 };
 
 #endif // DATALAYER_H

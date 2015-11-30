@@ -11,16 +11,16 @@ class Interface
 {
 public:
     Interface();
-    void programInfo()const;
-    void pickOption();
-    Person getPersoninfo();  // fær upplýsingar um persónu frá notanda.
-    void printList(vector<Person> listOfPersons); // prentar út lista af persónum.
     void start();
-    char askToSort();
 
 private:
     Worker m_worker;
     void askSort();
+    void programInfo()const;
+    void pickOption();
+    Person getPersoninfo();  // fær upplýsingar um persónu frá notanda.
+    void printList(vector<Person> listOfPersons); // prentar út lista af persónum.
+    char askToSort();
 };
 
 #endif // INTERFACE_H
