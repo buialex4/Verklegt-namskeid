@@ -1,15 +1,15 @@
 #include <iostream>
 #include <algorithm>
-#include "Worker.h"
+#include "interface.h"
 
 using namespace std;
 
 int main()
 {
-    Worker inter;
+    Interface inter;
 
     inter.programInfo();
-    inter.pressNumber();
+    inter.start();
 
    return 0;
 }

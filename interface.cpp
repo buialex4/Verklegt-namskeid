@@ -1,8 +1,21 @@
 #include "interface.h"
 #include "person.h"
+#include <ctype.h>
 
 Interface::Interface()
 {
+
+}
+
+void Interface::programInfo() const
+{
+    cout << "**************************************************" << endl;
+    cout << "*                    WELCOME                     *" << endl;
+    cout << "*  This program allows you to store info about   *" << endl;
+    cout << "*  the most common computer scientists, search   *" << endl;
+    cout << "*  and sort your list.                           *" << endl;
+    cout << "*                                                *" << endl;
+    cout << "**************************************************" << endl;
 
 }
 
@@ -50,4 +63,49 @@ void Interface::printList(vector<Person> listOfPersons)
         cout << endl;
         cout << "---------------------------" << endl;
     }
+}
+
+void Interface::start()
+{
+    int numb;
+
+    do
+    {
+        pickOption();
+
+        cin >> numb;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore(100,'\n');
+        }
+
+        //Error message
+        if(numb < 1 || numb > 4)
+
+        {
+            cout << "The input you enterd is not an option. Pick again" << endl;
+        }
+
+        switch(numb)
+        {
+        case 1:
+        {
+            Person p = getPersoninfo(); //sækja upplýsingar um persónu.
+            m_worker.createPerson(p);   //býr til eintak af persónu.
+            break;
+        }
+        case 2:
+        {
+            vector<Person> list = m_worker.getList(); // Sækja lista.
+            printList(list);
+            break;
+        }
+        case 3:
+            break;
+        case 4:
+            return;
+        }
+    }while(true);
+
 }
