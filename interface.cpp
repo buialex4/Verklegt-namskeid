@@ -45,8 +45,9 @@ void Interface::printList(vector<Person> listOfPersons)
         cout << "Name: " << listOfPersons[i].getName() << endl;
         cout << "Gender: " << listOfPersons[i].getGender() << endl;
         cout << "Born: " << listOfPersons[i].getDayOfBirth() << endl;
-        cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
+        if (listOfPersons[i].getDayOfDeath() > 0)
+            cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
         cout << endl;
         cout << "---------------------------" << endl;
-}
+    }
 }

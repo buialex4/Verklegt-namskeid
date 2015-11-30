@@ -26,13 +26,12 @@ void Worker::pressNumber()
     {
         m_interface.pickOption();
         cin >> numb;
-<<<<<<< HEAD
 
         //Error message
         if(numb < 1 || numb > 4)
-=======
+
         if((numb != '1') && (numb != '2') && (numb != '3') && (numb != '4'))
->>>>>>> 7c63fae1c1170c7f49f4dec127a205ed34b38b6c
+
         {
             cout << numb << " is not an option. Pick again" << endl;
         }
