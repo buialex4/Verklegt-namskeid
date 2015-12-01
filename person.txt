@@ -1,7 +1,58 @@
+<<<<<<< HEAD
+Bui Alexander
+m
+1991
+-1Stefan
+m
+1991
+-1Hilmar DaÐi
+f
+1991
+2015Bui 2
+m
+1992
+-1Eyç¢r
+m
+1995
+2000B£i 3
+m
+0
+-1b£i 4
+m
+0
+0B£i 5
+m
+2000
+2001B£i 6
+f
+0
+0B£i 7
+m
+1991
+-1B£i 8
+m
+2000
+2001Maggi
+m
+0
+0Aggi
+m
+2000
+2000B£i Alexander Eymundsson
+m
+1991
+2B£l£
+m
+2000
+=======
 Stefan
 m
 1991
 -1Kristin
 f
 1992
+-11
+m
+1991
+>>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
 -1

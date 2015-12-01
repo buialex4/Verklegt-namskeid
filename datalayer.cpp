@@ -49,7 +49,10 @@ void DataLayer::SaveData()
 {
     ofstream out_stream;
     out_stream.open("person.txt");
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
 
     for(unsigned int i=0; i<m_personList.size(); i++)
     {
