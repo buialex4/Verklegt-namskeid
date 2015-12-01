@@ -16,7 +16,6 @@ private:
     void GetData(); // sækir allar persónur úr skrá og setur inn í vectorinn.
     vector<Person> m_personList; // geymir lista af persónum.
     void createTestData();      // temp. prufu data.
-
 };
 
 #endif // DATALAYER_H

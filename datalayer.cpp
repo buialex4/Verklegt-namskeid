@@ -14,7 +14,7 @@ DataLayer::DataLayer()
 void DataLayer::GetData()
 {
     ifstream in_stream;
-    in_stream.open("wierd.txt");
+    in_stream.open("person.txt");
 
     m_personList.clear();
     if(in_stream.eof())
@@ -27,7 +27,7 @@ void DataLayer::GetData()
 
         while (!in_stream.eof())
         {
-            in_stream>>name;
+            getline(in_stream, name);
 
             if(in_stream.eof()) // hvað þýðirþað ? HAHA ok....
                 break;
@@ -48,14 +48,14 @@ void DataLayer::GetData()
 void DataLayer::SaveData()
 {
     ofstream out_stream;
-    out_stream.open("wierd.txt");
+    out_stream.open("person.txt");
 
     for(unsigned int i=0; i<m_personList.size(); i++)
     {
         out_stream << m_personList[i].getName() << endl;
         out_stream << m_personList[i].getGender() << endl;
         out_stream << m_personList[i].getDayOfBirth() << endl;
-        out_stream << m_personList[i].getDayOfDeath() << endl;
+        out_stream << m_personList[i].getDayOfDeath();
     }
     out_stream.close();
 }
@@ -69,11 +69,4 @@ void DataLayer::AddData(Person& p)
 vector<Person> DataLayer::getPersonList()
 {
     return m_personList;
-}
-
-void swap(Person& p1, Person& p2)
-{
-    Person temp = p1;
-    p1 = p2;
-    p2 = temp;
 }

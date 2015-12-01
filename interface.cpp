@@ -20,7 +20,8 @@ void Interface::programInfo() const
 
 void Interface::pickOption()
 {
-    cout << endl;
+    cout << "       MAIN MENU       " << endl;
+    cout << "       ---------       " << endl;
     cout << "1 - Add computer scientist." << endl;
     cout << "2 - Show list." << endl;
     cout << "3 - Exit." << endl;
@@ -86,13 +87,10 @@ char Interface::askSearchOrSort()
     cout << endl;
     cout << "      LIST MENU      " << endl;
     cout << "      ---------      " << endl;
-    cout << "1 - Search the list" << endl;
-    cout << "2 - Sort the list" << endl;
+    cout << "1 - Search list" << endl;
+    cout << "2 - Sort list" << endl;
     cout << "3 - Return to main menu" << endl;
     cin >> answer;
-
-    if(answer == 'y')
-        printSorted();
 
     return answer;
 }
@@ -145,14 +143,12 @@ void Interface::start()
                 }
                 if(ans == '2')
                 {
-                    system("Cls");
-                    programInfo();
+                    vector<Person> sortlist = m_worker.sortList(m_worker.getList());
+                    printList(sortlist);
                     break;
                 }
                 if(ans == '3')
                 {
-                    system("Cls");
-                    programInfo();
                     break;
                 }
 
@@ -164,29 +160,14 @@ void Interface::start()
                 m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
                 return;
             }
-<<<<<<< HEAD
-=======
-            case 4:
-            {
-                string search;
 
-                cout << "Enter search word: ";
-                cin >> search;
-
-                vector<Person> searchlist = m_worker.searchScientist(search); //
-                printList(searchlist);
-
-            }
->>>>>>> 706799159cc5a4d069d0027e74e5b3337c16a92a
        }
      }
 }
 
-<<<<<<< HEAD
-=======
 void Interface::printSorted()
 {
     vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
     printList(listOfPersons);
 }
->>>>>>> 706799159cc5a4d069d0027e74e5b3337c16a92a
+
