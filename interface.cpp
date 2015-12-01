@@ -50,18 +50,19 @@ Person Interface::getPersoninfo()
 
 void Interface::printList(vector<Person> listOfPersons)
 {
-    cout << string(50, '\n');
+    cout << endl;
     cout << "LIST OF COMPUTER SCIENTISTS" << endl;
     cout << "---------------------------" << endl;
     for(unsigned int i = 0; i < listOfPersons.size(); i++)
     {
         cout << "Name: " << listOfPersons[i].getName() << endl;
-        cout << "Gender: " << listOfPersons[i].getGender() << endl;
+        cout << "Gender: " << (listOfPersons[i].getGender()=="m"?"Male":"Female") << endl;
         cout << "Born: " << listOfPersons[i].getDayOfBirth() << endl;
         if (listOfPersons[i].getDayOfDeath() > 0)
             cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
         cout << "---------------------------" << endl;
     }
+    cout << "push 4 to search!!!!!!!" << endl;
 }
 
 char Interface::askToSort()
@@ -96,7 +97,7 @@ void Interface::start()
         }
 
         //Error message
-        if(numb < 1 || numb > 3)
+        if(numb < 1 || numb > 4)
 
         {
             cout << "The input you entered is not a valid option. Pick again!" << endl;
@@ -119,9 +120,20 @@ void Interface::start()
             break;
         }
         case 3:
-            m_worker.saveAllData();
+        {
+            m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
             return;
         }
-    }
+        case 4:
+        {
+            string search;
+            cout << "Enter search word: ";
+            cin >> search;
+            vector<Person> searchlist = m_worker.searchScientist(search); //
+            printList(searchlist);
 
+        }
+        }
+
+    }
 }

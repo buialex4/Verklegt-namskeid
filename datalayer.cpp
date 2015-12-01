@@ -27,14 +27,15 @@ void DataLayer::GetData()
 
         while (!in_stream.eof())
         {
-            in_stream >> name;
+            in_stream>>name;
 
             if(in_stream.eof()) // Losnum við vandamál að það sé auð lína aftast
                 break;
 
-            in_stream >> gender;
-            in_stream >> dob;
-            in_stream >> dod;
+            in_stream>>gender;
+            in_stream>>dob;
+            in_stream>>dod;
+
 
             Person newguy(name, gender, dob, dod);
             m_personList.push_back(newguy);

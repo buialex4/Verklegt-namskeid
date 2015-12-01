@@ -16,6 +16,7 @@ public:
     void createPerson(Person p);  // Býr til eintak af persónu og vistar.
     vector<Person> getList();    // sækja lista.
     void saveAllData();
+    vector<Person> searchScientist(string search); // Leitar af persónu í lista.
 
 private:
     DataLayer m_datalayer; // Object af DataLayer fyrir Worker klasann.

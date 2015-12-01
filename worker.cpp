@@ -2,6 +2,7 @@
 #include "person.h"
 #include "datalayer.h"
 #include <ctype.h>
+#include <string>
 
 Worker::Worker()
 {
@@ -21,5 +22,17 @@ vector<Person> Worker::getList()
 void Worker::saveAllData()
 {
     m_datalayer.SaveData();
+}
+
+vector<Person> Worker::searchScientist(string search)
+{
+    vector<Person> list = m_datalayer.getPersonList();
+    vector<Person> returnList;
+    for(int i = 0; i < list.size(); i++)
+    {
+        if(list[i].getName().find(search, 0)!= string::npos)
+            returnList.push_back(list[i]);
+    }
+    return returnList;
 }
 
