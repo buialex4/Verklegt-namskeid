@@ -243,7 +243,6 @@ void Interface::printSortedYearReverse()
     vector<Person>listOfPersons = m_worker.sortListYearOfBirthReverse(m_worker.getList());
     printList(listOfPersons);
 }
-=======
 int Interface::sortMenu()
 {
     int answer;
