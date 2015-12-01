@@ -22,6 +22,7 @@ private:
     void printList(vector<Person> listOfPersons);   // prentar út lista af persónum.
     char askToSort();
     void printSorted();
+    char askSearchOrSort();
 };
 
 #endif // INTERFACE_H

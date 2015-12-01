@@ -6,7 +6,6 @@ Interface::Interface()
 {
 
 }
-
 void Interface::programInfo() const
 {
     cout << "**************************************************" << endl;
@@ -24,8 +23,7 @@ void Interface::pickOption()
     cout << endl;
     cout << "1 - Add computer scientist." << endl;
     cout << "2 - Show list." << endl;
-    cout << "3 - Search." << endl;
-    cout << "4 - Exit." << endl;
+    cout << "3 - Exit." << endl;
 }
 
 Person Interface::getPersoninfo()
@@ -41,8 +39,25 @@ Person Interface::getPersoninfo()
     getline(cin, name);
     cout << "Gender (f/m): ";
     cin >> gender;
+    while(gender != "f" && gender != "m") // Villuskilaboð (ef notandi slær inn vitlausann innslátt
+    {
+        cout << "Invalid gender input!" << endl;
+        cout << "Gender (f/m): ";
+        cin >> gender;
+    }
     cout << "Enter year of birth (yyyy): ";
     cin >> dayOfBirth;
+    if(cin.fail()) // Villu tjékk á innslætti dayofbirth
+    {
+        cin.clear();
+        cin.ignore(100,'\n');
+    }
+    while(dayOfBirth < 1500 || dayOfBirth > 2100) // Villuskilaboð (ef notandi slær inn vitlausann innslátt
+    {
+        cout << "Invalid year input!" << endl;
+        cout << "Enter year of birth (yyyy): " << endl;
+        cin >> dayOfBirth;
+    }
     cout << "Year of passing (yyyy, Type -1 if scientist is alive): ";
     cin >> dayOfDeath;
 
@@ -65,10 +80,15 @@ void Interface::printList(vector<Person> listOfPersons)
     }
 }
 
-char Interface::askToSort()
+char Interface::askSearchOrSort()
 {
     char answer;
-    cout << "Do you want to sort the list? (y/n)" << endl;
+    cout << endl;
+    cout << "      LIST MENU      " << endl;
+    cout << "      ---------      " << endl;
+    cout << "1 - Search the list" << endl;
+    cout << "2 - Sort the list" << endl;
+    cout << "3 - Return to main menu" << endl;
     cin >> answer;
 
     return answer;
@@ -91,9 +111,8 @@ void Interface::start()
             cin.ignore(100,'\n');
         }
 
-        //Error message
-        if(numb < 1 || numb > 4)
 
+        if(numb < 1 || numb > 4)
         {
             cout << "The input you entered is not a valid option. Pick again!" << endl;
         }
@@ -110,12 +129,39 @@ void Interface::start()
             {
                 vector<Person> list = m_worker.getList(); // Sækja lista.
                 printList(list);
-                if (askToSort() == 'y')
-                    printSorted();
+                /*if (askToSort() == 'y')
+                    printSorted();*/
+
+                char ans = askSearchOrSort();
+                if(ans == '1')
+                {
+                    string search;
+
+                    cout << "Enter search word: ";
+                    cin >> search;
+
+                    vector<Person> searchlist = m_worker.searchScientist(search); //
+                    printList(searchlist);
+                }
+                if(ans == '2')
+                {
+                    programInfo();
+                    break;
+                }
+                if(ans == '3')
+                {
+                    programInfo();
+                    break;
+                }
 
                 break;
             }
             case 3:
+            {
+                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
+                return;
+            }
+            /*case 4:
             {
                 string search;
 
@@ -130,7 +176,7 @@ void Interface::start()
             {
                 m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
                 return;
-            }
+            }*/
        }
      }
 }
