@@ -14,11 +14,7 @@ DataLayer::DataLayer()
 void DataLayer::GetData()
 {
     ifstream in_stream;
-<<<<<<< HEAD
     in_stream.open("person.txt");
-=======
-    in_stream.open("data.txt");
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
 
     m_personList.clear();
     if(in_stream.is_open())
@@ -52,11 +48,8 @@ void DataLayer::GetData()
 void DataLayer::SaveData()
 {
     ofstream out_stream;
-<<<<<<< HEAD
     out_stream.open("person.txt");
-=======
-    out_stream.open("data.txt");
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
+
 
     for(unsigned int i=0; i<m_personList.size(); i++)
     {

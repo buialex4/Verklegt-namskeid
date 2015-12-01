@@ -130,8 +130,6 @@ void Interface::start()
             {
                 vector<Person> list = m_worker.getList(); // Sækja lista.
                 printList(list);
-                /*if (askToSort() == 'y')
-                    printSorted();*/
 
                 char ans = askSearchOrSort();
                 if(ans == '1')
@@ -146,20 +144,12 @@ void Interface::start()
                 }
                 if(ans == '2')
                 {
-<<<<<<< HEAD
                     vector<Person> sortlist = m_worker.sortList(m_worker.getList());
                     printList(sortlist);
-=======
-                    programInfo();
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
                     break;
                 }
                 if(ans == '3')
                 {
-<<<<<<< HEAD
-=======
-                    programInfo();
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
                     break;
                 }
 
@@ -170,26 +160,6 @@ void Interface::start()
                 m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
                 return;
             }
-<<<<<<< HEAD
-
-=======
-            /*case 4:
-            {
-                string search;
-
-                cout << "Enter search word: ";
-                cin >> search;
-
-                vector<Person> searchlist = m_worker.searchScientist(search); //
-                printList(searchlist);
-                break;
-            }
-            case 4:
-            {
-                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
-                return;
-            }*/
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
        }
      }
 }
@@ -199,7 +169,4 @@ void Interface::printSorted()
     vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
     printList(listOfPersons);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
