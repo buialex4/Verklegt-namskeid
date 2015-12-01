@@ -74,11 +74,6 @@ char Interface::askToSort()
     return answer;
 }
 
-void Interface::askSort()
-{
-
-}
-
 void Interface::start()
 {
     programInfo();     // welcome note.
@@ -105,33 +100,56 @@ void Interface::start()
 
         switch(numb)
         {
-        case 1:
-        {
-            Person p = getPersoninfo(); //sækja upplýsingar um persónu.
-            m_worker.createPerson(p);   //býr til eintak af persónu.
-            break;
-        }
-        case 2:
-        {
-            vector<Person> list = m_worker.getList(); // Sækja lista.
-            printList(list);
-            askSort();
+            case 1:
+            {
+                Person p = getPersoninfo(); //sækja upplýsingar um persónu.
+                m_worker.createPerson(p);   //býr til eintak af persónu.
+                break;
+            }
+            case 2:
+            {
+                vector<Person> list = m_worker.getList(); // Sækja lista.
+                printList(list);
+                askToSort();
 
-            break;
-        }
-        case 3:
-        {
-            m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
-            return;
-        }
-        case 4:
-        {
-            string search;
-            cout << "Enter search word: ";
-            cin >> search;
-            vector<Person> searchlist = m_worker.searchScientist(search); //
-            printList(searchlist);
-        }
-        }
-    }
+                break;
+            }
+            case 3:
+            {
+                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
+                return;
+            }
+            case 4:
+            {
+                string search;
+
+                cout << "Enter search word: ";
+                cin >> search;
+
+                vector<Person> searchlist = m_worker.searchScientist(search); //
+                printList(searchlist);
+
+            }
+       }
+     }
 }
+
+/*void Interface::printSorted()
+{
+    vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
+    printList(listOfPersons);
+}
+
+
+bool compareName(Person& name1, Person& name2)
+{
+    return name1.getName() < name2.getName();
+}
+
+ vector<Person> Interface::sortList(vector<Person> listOfPersons)
+{
+       sort(listOfPersons.begin(), listOfPersons.end(), compareName);
+       return listOfPersons;
+>>>>>>> origin/master
+}
+*/

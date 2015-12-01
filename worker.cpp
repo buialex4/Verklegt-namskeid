@@ -28,7 +28,7 @@ vector<Person> Worker::searchScientist(string search)   // Leitar af persónu í
 {                                                       // vector af persónum sem fundust.
     vector<Person> list = m_datalayer.getPersonList();
     vector<Person> returnList;
-    for(int i = 0; i < list.size(); i++)
+    for(unsigned int i = 0; i < list.size(); i++)
     {
         if(list[i].getName().find(search, 0)!= string::npos)
             returnList.push_back(list[i]);
