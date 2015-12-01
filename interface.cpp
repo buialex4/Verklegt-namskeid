@@ -20,6 +20,7 @@ void Interface::programInfo() const
 
 void Interface::pickOption()
 {
+    cout << endl;
     cout << "       MAIN MENU       " << endl;
     cout << "       ---------       " << endl;
     cout << "1 - Add computer scientist." << endl;
@@ -48,20 +49,24 @@ Person Interface::getPersoninfo()
     }
     cout << "Enter year of birth (yyyy): ";
     cin >> dayOfBirth;
-    if(cin.fail()) // Villu tjékk á innslætti dayofbirth
+    while(cin.fail() || dayOfBirth < 0 || dayOfBirth > 2015) // Villu tjékk á innslætti dayofbirth
     {
         cin.clear();
         cin.ignore(100,'\n');
-    }
-    while(dayOfBirth < 1500 || dayOfBirth > 2100) // Villuskilaboð (ef notandi slær inn vitlausann innslátt
-    {
         cout << "Invalid year input!" << endl;
-        cout << "Enter year of birth (yyyy): " << endl;
+        cout << "Enter year of birth (yyyy): ";
         cin >> dayOfBirth;
     }
     cout << "Year of passing (yyyy, Type -1 if scientist is alive): ";
     cin >> dayOfDeath;
-
+    while(cin.fail() || dayOfDeath < -1 || dayOfDeath > 2015) // Villu tjékk á innslætti dayofbirth
+    {
+        cin.clear();
+        cin.ignore(100,'\n');
+        cout << "Invalid year input!" << endl;
+        cout << "Year of passing (yyyy, Type -1 if scientist is alive): ";
+        cin >> dayOfDeath;
+    }
     return Person(name, gender, dayOfBirth, dayOfDeath);
 }
 
@@ -81,9 +86,9 @@ void Interface::printList(vector<Person> listOfPersons)
     }
 }
 
-char Interface::askSearchOrSort()
+int Interface::askSearchOrSort()
 {
-    char answer;
+    int answer;
     cout << endl;
     cout << "      LIST MENU      " << endl;
     cout << "      ---------      " << endl;
@@ -91,7 +96,19 @@ char Interface::askSearchOrSort()
     cout << "2 - Sort list" << endl;
     cout << "3 - Return to main menu" << endl;
     cin >> answer;
-
+    while(cin.fail() || answer < 1 || answer > 3)
+    {
+        cin.clear();
+        cin.ignore(100,'\n');
+        cout << "The input you entered is not a valid option. Pick again!" << endl;
+        cout << endl;
+        cout << "      LIST MENU      " << endl;
+        cout << "      ---------      " << endl;
+        cout << "1 - Search list" << endl;
+        cout << "2 - Sort list" << endl;
+        cout << "3 - Return to main menu" << endl;
+        cin >> answer;
+    }
     return answer;
 }
 
@@ -113,7 +130,7 @@ void Interface::start()
         }
 
 
-        if(numb < 1 || numb > 4)
+        if(numb < 1 || numb > 3)
         {
             cout << "The input you entered is not a valid option. Pick again!" << endl;
         }
@@ -133,8 +150,8 @@ void Interface::start()
                 /*if (askToSort() == 'y')
                     printSorted();*/
 
-                char ans = askSearchOrSort();
-                if(ans == '1')
+                int ans = askSearchOrSort();
+                if(ans == 1)
                 {
                     string search;
 
@@ -144,22 +161,14 @@ void Interface::start()
                     vector<Person> searchlist = m_worker.searchScientist(search); //
                     printList(searchlist);
                 }
-                if(ans == '2')
+                if(ans == 2)
                 {
-<<<<<<< HEAD
                     vector<Person> sortlist = m_worker.sortList(m_worker.getList());
                     printList(sortlist);
-=======
-                    programInfo();
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
                     break;
                 }
-                if(ans == '3')
+                if(ans == 3)
                 {
-<<<<<<< HEAD
-=======
-                    programInfo();
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
                     break;
                 }
 
@@ -170,26 +179,7 @@ void Interface::start()
                 m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
                 return;
             }
-<<<<<<< HEAD
 
-=======
-            /*case 4:
-            {
-                string search;
-
-                cout << "Enter search word: ";
-                cin >> search;
-
-                vector<Person> searchlist = m_worker.searchScientist(search); //
-                printList(searchlist);
-                break;
-            }
-            case 4:
-            {
-                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
-                return;
-            }*/
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
        }
      }
 }
@@ -199,7 +189,3 @@ void Interface::printSorted()
     vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
     printList(listOfPersons);
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 7801c74748b560c0bb43b548d100b8542954be57
