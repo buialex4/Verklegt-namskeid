@@ -6,7 +6,6 @@ Interface::Interface()
 {
 
 }
-
 void Interface::programInfo() const
 {
     cout << "**************************************************" << endl;

@@ -14,10 +14,10 @@ DataLayer::DataLayer()
 void DataLayer::GetData()
 {
     ifstream in_stream;
-    in_stream.open("data.txt");
+    in_stream.open("wierd.cpu");
 
     m_personList.clear();
-    if(in_stream.is_open())
+    if(in_stream.eof())
     {
 
         string name;
@@ -29,7 +29,7 @@ void DataLayer::GetData()
         {
             in_stream>>name;
 
-            if(in_stream.eof()) // Losnum við vandamál að það sé auð lína aftast
+            if(in_stream.eof()) // hvað þýðirþað ? HAHA ok....
                 break;
 
             in_stream>>gender;
