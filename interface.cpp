@@ -91,12 +91,15 @@ char Interface::askSearchOrSort()
     cout << "3 - Return to main menu" << endl;
     cin >> answer;
 
+    if(answer == 'y')
+        printSorted();
+
     return answer;
 }
 
 void Interface::start()
 {
-    programInfo();
+    programInfo();     // welcome note.
 
     int numb;
 
@@ -161,7 +164,29 @@ void Interface::start()
                 m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
                 return;
             }
+<<<<<<< HEAD
+=======
+            case 4:
+            {
+                string search;
+
+                cout << "Enter search word: ";
+                cin >> search;
+
+                vector<Person> searchlist = m_worker.searchScientist(search); //
+                printList(searchlist);
+
+            }
+>>>>>>> 706799159cc5a4d069d0027e74e5b3337c16a92a
        }
      }
 }
 
+<<<<<<< HEAD
+=======
+void Interface::printSorted()
+{
+    vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
+    printList(listOfPersons);
+}
+>>>>>>> 706799159cc5a4d069d0027e74e5b3337c16a92a
