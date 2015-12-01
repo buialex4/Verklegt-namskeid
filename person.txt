@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Bui Alexander
 m
 1991
@@ -43,4 +44,15 @@ m
 2B£l£
 m
 2000
+=======
+Stefan
+m
+1991
+-1Kristin
+f
+1992
+-11
+m
+1991
+>>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
 -1
