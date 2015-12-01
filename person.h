@@ -10,7 +10,6 @@ class Person
 public:
     Person();
     Person(string n, string g, int dob, int dod);
-    void readPerson(string n, string g, int dob, int dod);
     string getName();
     string getGender();
     int getDayOfBirth();

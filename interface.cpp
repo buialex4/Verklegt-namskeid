@@ -24,7 +24,8 @@ void Interface::pickOption()
     cout << endl;
     cout << "1 - Add computer scientist." << endl;
     cout << "2 - Show list." << endl;
-    cout << "3 - Exit." << endl;
+    cout << "3 - Search." << endl;
+    cout << "4 - Exit." << endl;
 }
 
 Person Interface::getPersoninfo()
@@ -62,7 +63,6 @@ void Interface::printList(vector<Person> listOfPersons)
             cout << "Died: " << listOfPersons[i].getDayOfDeath() << endl;
         cout << "---------------------------" << endl;
     }
-    cout << "push 4 to search!!!!!!!" << endl;
 }
 
 char Interface::askToSort()
@@ -70,9 +70,6 @@ char Interface::askToSort()
     char answer;
     cout << "Do you want to sort the list? (y/n)" << endl;
     cin >> answer;
-
-    if(answer == 'y')
-        printSorted();
 
     return answer;
 }
@@ -113,16 +110,12 @@ void Interface::start()
             {
                 vector<Person> list = m_worker.getList(); // Sækja lista.
                 printList(list);
-                askToSort();
+                if (askToSort() == 'y')
+                    printSorted();
 
                 break;
             }
             case 3:
-            {
-                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
-                return;
-            }
-            case 4:
             {
                 string search;
 
@@ -131,7 +124,12 @@ void Interface::start()
 
                 vector<Person> searchlist = m_worker.searchScientist(search); //
                 printList(searchlist);
-
+                break;
+            }
+            case 4:
+            {
+                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
+                return;
             }
        }
      }

@@ -4,7 +4,6 @@
 #include "worker.h"
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -17,12 +16,10 @@ public:
 private:
     Worker m_worker;
 
-    void programInfo()const;  // birtir welcome note.
-    void pickOption();        // birtir valkosti fyrir notanda.
-    Person getPersoninfo();   // fær upplýsingar um persónu frá notanda.
-    void printList(vector<Person> listOfPersons); // prentar út lista af persónum.
-    vector<Person> sortList(vector<Person> listOfPersons);
-    void askSort();
+    void programInfo()const;                        // birtir welcome note.
+    void pickOption();                              // birtir valkosti fyrir notanda.
+    Person getPersoninfo();                         // fær upplýsingar um persónu frá notanda.
+    void printList(vector<Person> listOfPersons);   // prentar út lista af persónum.
     char askToSort();
     void printSorted();
 };

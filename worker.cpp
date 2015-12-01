@@ -45,7 +45,7 @@ bool compareName(Person& name1, Person& name2)
 
 vector<Person> Worker::sortList(vector<Person> listOfPersons)
 {
-       sort(listOfPersons.begin(), listOfPersons.end(), compareName);
-       return listOfPersons;
+    sort(listOfPersons.begin(), listOfPersons.end(), compareName);
+    return listOfPersons;
 }
 
