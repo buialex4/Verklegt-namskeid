@@ -21,6 +21,7 @@ private:
     char askSearchOrSort();
     vector<Person> sortList(vector<Person> listOfPersons);
     void printSorted();
+    int sortMenu();
 };
 
 #endif // INTERFACE_H
