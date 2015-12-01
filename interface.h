@@ -12,6 +12,8 @@ class Interface
 public:
     Interface();
     void start();
+    void printSorted();
+    vector<Person> sortList(vector<Person> listOfPersons);
 
 private:
     Worker m_worker;

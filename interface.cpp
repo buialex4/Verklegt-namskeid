@@ -135,3 +135,22 @@ void Interface::start()
        }
      }
 }
+
+/*void Interface::printSorted()
+{
+    vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
+    printList(listOfPersons);
+}
+
+
+bool compareName(Person& name1, Person& name2)
+{
+    return name1.getName() < name2.getName();
+}
+
+ vector<Person> Interface::sortList(vector<Person> listOfPersons)
+{
+       sort(listOfPersons.begin(), listOfPersons.end(), compareName);
+       return listOfPersons;
+}
+*/
