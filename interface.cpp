@@ -71,6 +71,9 @@ char Interface::askToSort()
     cout << "Do you want to sort the list? (y/n)" << endl;
     cin >> answer;
 
+    if(answer == 'y')
+        printSorted();
+
     return answer;
 }
 
@@ -134,22 +137,8 @@ void Interface::start()
      }
 }
 
-/*void Interface::printSorted()
+void Interface::printSorted()
 {
     vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
     printList(listOfPersons);
 }
-
-
-bool compareName(Person& name1, Person& name2)
-{
-    return name1.getName() < name2.getName();
-}
-
- vector<Person> Interface::sortList(vector<Person> listOfPersons)
-{
-       sort(listOfPersons.begin(), listOfPersons.end(), compareName);
-       return listOfPersons;
->>>>>>> origin/master
-}
-*/

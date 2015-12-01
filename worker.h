@@ -17,6 +17,7 @@ public:
     vector<Person> getList();     // sækja lista.
     void saveAllData();           // Vistar í .txt þegar notandi velur 3. exit.
     vector<Person> searchScientist(string search); // Leitar af persónu í lista.
+    vector<Person> sortList(vector<Person> listOfPersons);
 
 private:
     DataLayer m_datalayer;        // Object af DataLayer fyrir Worker klasann.

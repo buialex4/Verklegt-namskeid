@@ -3,6 +3,7 @@
 #include "datalayer.h"
 #include <ctype.h>
 #include <string>
+#include <algorithm>
 
 Worker::Worker()
 {
@@ -34,5 +35,17 @@ vector<Person> Worker::searchScientist(string search)   // Leitar af persónu í
             returnList.push_back(list[i]);
     }
     return returnList;
+}
+
+bool compareName(Person& name1, Person& name2)
+{
+    return name1.getName() < name2.getName();
+}
+
+
+vector<Person> Worker::sortList(vector<Person> listOfPersons)
+{
+       sort(listOfPersons.begin(), listOfPersons.end(), compareName);
+       return listOfPersons;
 }
 
