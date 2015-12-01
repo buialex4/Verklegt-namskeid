@@ -14,7 +14,7 @@ DataLayer::DataLayer()
 void DataLayer::GetData()
 {
     ifstream in_stream;
-    in_stream.open("wierd.cpu");
+    in_stream.open("wierd.txt");
 
     m_personList.clear();
     if(in_stream.eof())
@@ -48,7 +48,7 @@ void DataLayer::GetData()
 void DataLayer::SaveData()
 {
     ofstream out_stream;
-    out_stream.open("data.txt");
+    out_stream.open("wierd.txt");
 
     for(unsigned int i=0; i<m_personList.size(); i++)
     {

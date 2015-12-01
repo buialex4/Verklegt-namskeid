@@ -15,12 +15,11 @@ public:
 
 private:
     Worker m_worker;
-    void askSort();
     void programInfo()const;
     void pickOption();
     Person getPersoninfo();  // fær upplýsingar um persónu frá notanda.
     void printList(vector<Person> listOfPersons); // prentar út lista af persónum.
-    char askToSort();
+    char askSearchOrSort();
 };
 
 #endif // INTERFACE_H
