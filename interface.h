@@ -21,10 +21,7 @@ private:
     int askSearchOrSort();
     vector<Person> sortList(vector<Person> listOfPersons);
     void printSorted();
-<<<<<<< HEAD
-=======
     int sortMenu();
->>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
 };
 
 #endif // INTERFACE_H

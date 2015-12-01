@@ -161,11 +161,10 @@ void Interface::start()
                 }
                 if(ans == 2)
                 {
-<<<<<<< HEAD
+
                     vector<Person> sortlist = m_worker.sortList(m_worker.getList());
                     printList(sortlist);
-                    break;
-=======
+
                     int sort_ans = sortMenu();
                     if(sort_ans == 1)
                     {
@@ -185,7 +184,7 @@ void Interface::start()
                     {
 
                     }*/
->>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
+
                 }
                 if(ans == 3)
                 {
@@ -199,10 +198,7 @@ void Interface::start()
                 m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
                 return;
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
        }
      }
 }
@@ -212,20 +208,31 @@ void Interface::printSorted()
     vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
     printList(listOfPersons);
 }
-<<<<<<< HEAD
-=======
+
 
 int Interface::sortMenu()
 {
     int answer;
-    cout << "________________________________" << endl;
+    cout << "--------------------------------" << endl;
     cout << "Sort by?" << endl;
     cout << "1 - In alphabetical order " << endl;
     cout << "2 - In reverse alphabetical order " << endl;
     cout << "3 - Birth " << endl;
     cout << "4 - Reverse birth " << endl;
     cin >> answer;
+    while(cin.fail() || answer < 1 || answer > 4)
+    {
+        cin.clear();
+        cin.ignore(100,'\n');
+        cout << "The input you entered is not a valid option. Pick again!" << endl;
+        cout << "Sort by?" << endl;
+        cout << "1 - In alphabetical order " << endl;
+        cout << "2 - In reverse alphabetical order " << endl;
+        cout << "3 - Birth " << endl;
+        cout << "4 - Reverse birth " << endl;
+        cin >> answer;
+    }
 
     return answer;
 }
->>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
+
