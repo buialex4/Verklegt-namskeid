@@ -81,18 +81,18 @@ void Interface::printList(vector<Person> listOfPersons)
     }
 }
 
-char Interface::askSearchOrSort()
+int Interface::askSearchOrSort()
 {
-    char answer;
+    int SoS_answer;
     cout << endl;
     cout << "      LIST MENU      " << endl;
     cout << "      ---------      " << endl;
     cout << "1 - Search list" << endl;
     cout << "2 - Sort list" << endl;
     cout << "3 - Return to main menu" << endl;
-    cin >> answer;
+    cin >> SoS_answer;
 
-    return answer;
+    return SoS_answer;
 }
 
 void Interface::start()
@@ -131,8 +131,8 @@ void Interface::start()
                 vector<Person> list = m_worker.getList(); // Sækja lista.
                 printList(list);
 
-                char ans = askSearchOrSort();
-                if(ans == '1')
+                int ans = askSearchOrSort();
+                if(ans == 1)
                 {
                     string search;
 
@@ -142,13 +142,13 @@ void Interface::start()
                     vector<Person> searchlist = m_worker.searchScientist(search); //
                     printList(searchlist);
                 }
-                if(ans == '2')
+                if(ans == 2)
                 {
                     vector<Person> sortlist = m_worker.sortList(m_worker.getList());
                     printList(sortlist);
                     break;
                 }
-                if(ans == '3')
+                if(ans == 3)
                 {
                     break;
                 }
@@ -170,3 +170,20 @@ void Interface::printSorted()
     printList(listOfPersons);
 }
 
+void Interface::printSortedReverse()
+{
+    vector<Person>listOfPersons = m_worker.sortListReverse(m_worker.getList());
+    printList(listOfPersons);
+}
+
+void Interface::printSortedYear()
+{
+    vector<Person>listOfPersons = m_worker.sortListYearOfBirth(m_worker.getList());
+    printList(listOfPersons);
+}
+
+void Interface::printSortedYearReverse()
+{
+    vector<Person>listOfPersons = m_worker.sortListYearOfBirthReverse(m_worker.getList());
+    printList(listOfPersons);
+}
