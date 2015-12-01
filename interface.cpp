@@ -81,7 +81,7 @@ void Interface::askSort()
 
 void Interface::start()
 {
-    programInfo();
+    programInfo();     // welcome note.
 
     int numb;
 
@@ -131,9 +131,7 @@ void Interface::start()
             cin >> search;
             vector<Person> searchlist = m_worker.searchScientist(search); //
             printList(searchlist);
-
         }
         }
-
     }
 }

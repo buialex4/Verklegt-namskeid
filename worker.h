@@ -14,12 +14,12 @@ public:
 
     void sortList();
     void createPerson(Person p);  // Býr til eintak af persónu og vistar.
-    vector<Person> getList();    // sækja lista.
-    void saveAllData();
+    vector<Person> getList();     // sækja lista.
+    void saveAllData();           // Vistar í .txt þegar notandi velur 3. exit.
     vector<Person> searchScientist(string search); // Leitar af persónu í lista.
 
 private:
-    DataLayer m_datalayer; // Object af DataLayer fyrir Worker klasann.
+    DataLayer m_datalayer;        // Object af DataLayer fyrir Worker klasann.
 };
 
 #endif // WORKER_H

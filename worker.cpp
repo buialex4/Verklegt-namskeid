@@ -9,7 +9,7 @@ Worker::Worker()
 
 }
 
-void Worker::createPerson(Person p)
+void Worker::createPerson(Person p)     // Býr til eintak af persónu og vistar.
 {
     m_datalayer.AddData(p);
 }
@@ -24,8 +24,8 @@ void Worker::saveAllData()
     m_datalayer.SaveData();
 }
 
-vector<Person> Worker::searchScientist(string search)
-{
+vector<Person> Worker::searchScientist(string search)   // Leitar af persónu í lista og skilar
+{                                                       // vector af persónum sem fundust.
     vector<Person> list = m_datalayer.getPersonList();
     vector<Person> returnList;
     for(int i = 0; i < list.size(); i++)
