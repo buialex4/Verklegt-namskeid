@@ -88,22 +88,20 @@ void Interface::printList(vector<Person> listOfPersons)
 
 int Interface::askSearchOrSort()
 {
-<<<<<<< HEAD
-    int SoS_answer;
-=======
+
     int answer;
->>>>>>> 07f509b01152d401a018408cd153850f6a285d8b
+
     cout << endl;
     cout << "      LIST MENU      " << endl;
     cout << "      ---------      " << endl;
     cout << "1 - Search list" << endl;
     cout << "2 - Sort list" << endl;
     cout << "3 - Return to main menu" << endl;
-<<<<<<< HEAD
-    cin >> SoS_answer;
 
-    return SoS_answer;
-=======
+    cin >> answer;
+
+    return answer;
+
     cin >> answer;
     while(cin.fail() || answer < 1 || answer > 3)
     {
@@ -119,7 +117,7 @@ int Interface::askSearchOrSort()
         cin >> answer;
     }
     return answer;
->>>>>>> 07f509b01152d401a018408cd153850f6a285d8b
+
 }
 
 void Interface::start()
@@ -158,8 +156,8 @@ void Interface::start()
                 vector<Person> list = m_worker.getList(); // Sækja lista.
                 printList(list);
 
-                int ans = askSearchOrSort();
-                if(ans == 1)
+                int SoSans = askSearchOrSort();
+                if(SoSans == 1)
                 {
                     string search;
 
@@ -169,34 +167,33 @@ void Interface::start()
                     vector<Person> searchlist = m_worker.searchScientist(search); //
                     printList(searchlist);
                 }
-                if(ans == 2)
+                if(SoSans == 2)
                 {
-
-                    vector<Person> sortlist = m_worker.sortList(m_worker.getList());
-                    printList(sortlist);
 
                     int sort_ans = sortMenu();
                     if(sort_ans == 1)
                     {
-                        vector<Person> sortlist = m_worker.sortList(m_worker.getList());
-                        printList(sortlist);
+                        printSorted();
                         break;
                     }
-                    /*if(sort_ans == 2)
+                    if(sort_ans == 2)
                     {
-
+                        printSortedReverse();
+                        break;
                     }
                     if(sort_ans == 3)
                     {
-
+                        printSortedYear();
+                        break;
                     }
                     if(sort_ans == 4)
                     {
-
-                    }*/
+                        printSortedYearReverse();
+                        break;
+                    }
 
                 }
-                if(ans == 3)
+                if(SoSans == 3)
                 {
                     break;
                 }
@@ -219,8 +216,6 @@ void Interface::printSorted()
     printList(listOfPersons);
 }
 
-
-<<<<<<< HEAD
 void Interface::printSortedReverse()
 {
     vector<Person>listOfPersons = m_worker.sortListReverse(m_worker.getList());
@@ -229,13 +224,13 @@ void Interface::printSortedReverse()
 
 void Interface::printSortedYear()
 {
-    vector<Person>listOfPersons = m_worker.sortListYearOfBirth(m_worker.getList());
+    vector<Person>listOfPersons = m_worker.sortListYear(m_worker.getList());
     printList(listOfPersons);
 }
 
 void Interface::printSortedYearReverse()
 {
-    vector<Person>listOfPersons = m_worker.sortListYearOfBirthReverse(m_worker.getList());
+    vector<Person>listOfPersons = m_worker.sortListYearReverse(m_worker.getList());
     printList(listOfPersons);
 }
 int Interface::sortMenu()
@@ -263,9 +258,4 @@ int Interface::sortMenu()
 
     return answer;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0bebaa9b24fd5de4b3f60b6ab56438835ff23aee
->>>>>>> 07f509b01152d401a018408cd153850f6a285d8b
->>>>>>> e6d8067adffceea3a0bac325b0c129aeacdb52a8
