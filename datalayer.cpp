@@ -2,24 +2,18 @@
 #include "person.h"
 #include "datalayer.h"
 #include <cstdlib>
-#include <iostream>
-
-using namespace std;
 
 DataLayer::DataLayer()
 {
     GetData();
 }
 
-void DataLayer::GetData()
+void DataLayer::GetData()       //Sækir gögn úr skrá og geymir í vektor.
 {
     ifstream in_stream;
     in_stream.open("person.txt");
-
-    m_personList.clear();
     if(in_stream.is_open())
     {
-
         string name;
         string gender;
         int dob;
@@ -28,24 +22,18 @@ void DataLayer::GetData()
         while (!in_stream.eof())
         {
             getline(in_stream, name);
-
-            if(in_stream.eof()) // Losnum við vandamál að það sé auð lína aftast
-                break;
-
-            in_stream>>gender;
-            in_stream>>dob;
-            in_stream>>dod;
-
+            in_stream >> gender;
+            in_stream >> dob;
+            in_stream >> dod;
 
             Person newguy(name, gender, dob, dod);
             m_personList.push_back(newguy);
         }
-
         in_stream.close();
     }
 }
 
-void DataLayer::SaveData()
+void DataLayer::SaveData()                      //Sækir gögn úr vektor og vistar í skrá.
 {
     ofstream out_stream;
     out_stream.open("person.txt");
@@ -61,12 +49,12 @@ void DataLayer::SaveData()
 }
 
 
-void DataLayer::AddData(Person& p)
+void DataLayer::AddData(Person& p)              //Bætir við tilviki af Person klasanum og bætir aftan við vektor.
 {
     m_personList.push_back(p);
 }
 
-vector<Person> DataLayer::getPersonList()
+vector<Person> DataLayer::getPersonList()        //Skilar private breytunni m_personList.
 {
     return m_personList;
 }

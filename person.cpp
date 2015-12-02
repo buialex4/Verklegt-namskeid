@@ -1,6 +1,6 @@
 #include "person.h"
 
-Person::Person()
+Person::Person()            //Sjálfgefni smiðurinn fyrir Person klasann.
 {
     name = "";
     gender = "";
@@ -8,7 +8,7 @@ Person::Person()
     dayOfDeath = 0;
 }
 
-Person::Person(string n, string g, int dob, int dod)
+Person::Person(string n, string g, int dob, int dod)    //Smiður fyrir Person klasann til að upphafstilla private breytur.
 {
     name = n;
     gender = g;
@@ -16,22 +16,22 @@ Person::Person(string n, string g, int dob, int dod)
     dayOfDeath = dod;
 }
 
-string Person::getName()
+string Person::getName()        //Skilar "name".
 {
     return name;
 }
 
-string Person::getGender()
+string Person::getGender()      //Skilar "gender".
 {
     return gender;
 }
 
-int Person::getDayOfBirth()
+int Person::getDayOfBirth()     //Skilar "DayOfBirth".
 {
     return dayOfBirth;
 }
 
-int Person::getDayOfDeath()
+int Person::getDayOfDeath()     //Skilar "DayOfDeath".
 {
     return dayOfDeath;
 }

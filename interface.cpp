@@ -6,7 +6,96 @@ Interface::Interface()
 {
 
 }
-void Interface::programInfo() const
+
+void Interface::start()             //Keyrir forritið.
+{
+    programInfo();     //Opnunarskilaboð til notanda.
+    int numb;
+
+    while(true)
+    {
+        pickOption();
+        cin >> numb;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore(100,'\n');
+        }
+        if(numb < 1 || numb > 3)
+        {
+            cout << "The input you entered is not a valid option. Pick again!" << endl;     //Villuskilaboð fyrir valmynd.
+        }
+        switch(numb)
+        {
+            case 1:
+            {
+                Person p = getPersoninfo(); //sækja upplýsingar um persónu.
+                m_worker.createPerson(p);   //býr til eintak af persónu.
+                break;
+            }
+            case 2:
+            {
+                vector<Person> list = m_worker.getList(); // Sækja lista.
+                printList(list);
+
+                int SoS_ans = askSearchOrSort();
+                if(SoS_ans == 1)
+                {
+                    string search;
+                    cout << "Enter search word: ";
+                    cin >> search;
+                    vector<Person> searchlist = m_worker.searchScientist(search);
+                    printList(searchlist);
+                }
+                if(SoS_ans == 2)
+                {
+
+                    int sort_ans = sortMenu();
+                    if(sort_ans == 1)
+                    {
+                        printSorted();
+                        break;
+                    }
+                    if(sort_ans == 2)
+                    {
+                        printSortedReverse();
+                        break;
+                    }
+                    if(sort_ans == 3)
+                    {
+                        printSortedYear();
+                        break;
+                    }
+                    if(sort_ans == 4)
+                    {
+                        printSortedYearReverse();
+                        break;
+                    }
+                }
+                if(SoS_ans == 3)
+                {
+                    string remove;
+                    cout << "Enter name to remove: ";
+                    cin >> remove;
+                    vector<Person> removelist = m_worker.removeScientist(remove); //
+                    printList(removelist);
+                }
+                if(SoS_ans == 4)
+                {
+                    break;
+                }
+                break;
+            }
+            case 3:
+            {
+                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
+                return;
+            }
+       }
+     }
+}
+
+void Interface::programInfo() const  //Opnunarskilaboð til notanda.
 {
     cout << "**************************************************" << endl;
     cout << "*                    WELCOME                     *" << endl;
@@ -15,10 +104,9 @@ void Interface::programInfo() const
     cout << "*  and sort your list.                           *" << endl;
     cout << "*                                                *" << endl;
     cout << "**************************************************" << endl;
-
 }
 
-void Interface::pickOption()
+void Interface::pickOption()        //Aðalvalmynd.
 {
     cout << endl;
     cout << "       MAIN MENU       " << endl;
@@ -28,7 +116,7 @@ void Interface::pickOption()
     cout << "3 - Exit." << endl;
 }
 
-Person Interface::getPersoninfo()
+Person Interface::getPersoninfo()       //Inntak fyrir upplýsingar um persónu.
 {
     string name;
     string gender;
@@ -70,7 +158,7 @@ Person Interface::getPersoninfo()
     return Person(name, gender, dayOfBirth, dayOfDeath);
 }
 
-void Interface::printList(vector<Person> listOfPersons)
+void Interface::printList(vector<Person> listOfPersons)         //Prentar út upplýsingar um persónur.
 {
     cout << endl;
     cout << "LIST OF COMPUTER SCIENTISTS" << endl;
@@ -86,7 +174,7 @@ void Interface::printList(vector<Person> listOfPersons)
     }
 }
 
-int Interface::askSearchOrSort()
+int Interface::askSearchOrSort()            //Valmynd fyrir "show list".
 {
 
     int answer;
@@ -96,11 +184,12 @@ int Interface::askSearchOrSort()
     cout << "       ---------      " << endl;
     cout << "1 - Search list" << endl;
     cout << "2 - Sort list" << endl;
-    cout << "3 - Return to main menu" << endl;
+    cout << "3 - Remove from list" << endl;
+    cout << "4 - Return to main menu" << endl;
 
     cin >> answer;
 
-    while(cin.fail() || answer < 1 || answer > 3)
+    while(cin.fail() || answer < 1 || answer > 4)
     {
         cin.clear();
         cin.ignore(100,'\n');
@@ -110,104 +199,16 @@ int Interface::askSearchOrSort()
         cout << "       ---------      " << endl;
         cout << "1 - Search list" << endl;
         cout << "2 - Sort list" << endl;
-        cout << "3 - Return to main menu" << endl;
+        cout << "3 - Remove from list" << endl;
+        cout << "4 - Return to main menu" << endl;
         cin >> answer;
     }
+
     return answer;
-
 }
 
-void Interface::start()
-{
-    programInfo();     // welcome note.
 
-    int numb;
-
-    while(true)
-    {
-        pickOption();
-
-        cin >> numb;
-        if(cin.fail())
-        {
-            cin.clear();
-            cin.ignore(100,'\n');
-        }
-
-
-        if(numb < 1 || numb > 3)
-        {
-            cout << "The input you entered is not a valid option. Pick again!" << endl;
-        }
-
-        switch(numb)
-        {
-            case 1:
-            {
-                Person p = getPersoninfo(); //sækja upplýsingar um persónu.
-                m_worker.createPerson(p);   //býr til eintak af persónu.
-                break;
-            }
-            case 2:
-            {
-                vector<Person> list = m_worker.getList(); // Sækja lista.
-                printList(list);
-
-                int SoSans = askSearchOrSort();
-                if(SoSans == 1)
-                {
-                    string search;
-
-                    cout << "Enter search word: ";
-                    cin >> search;
-
-                    vector<Person> searchlist = m_worker.searchScientist(search); //
-                    printList(searchlist);
-                }
-                if(SoSans == 2)
-                {
-
-                    int sort_ans = sortMenu();
-                    if(sort_ans == 1)
-                    {
-                        printSorted();
-                        break;
-                    }
-                    if(sort_ans == 2)
-                    {
-                        printSortedReverse();
-                        break;
-                    }
-                    if(sort_ans == 3)
-                    {
-                        printSortedYear();
-                        break;
-                    }
-                    if(sort_ans == 4)
-                    {
-                        printSortedYearReverse();
-                        break;
-                    }
-
-                }
-                if(SoSans == 3)
-                {
-                    break;
-                }
-
-                break;
-            }
-            case 3:
-            {
-                m_worker.saveAllData(); // Geymum öll gögn áður en forriti er lokað.
-                return;
-            }
-
-       }
-     }
-}
-
-void Interface::printSorted()
+void Interface::printSorted()               //prentar út uppröðuðum upplýsingum á mismunandi vegu.
 {
     vector<Person>listOfPersons = m_worker.sortList(m_worker.getList());
     printList(listOfPersons);
@@ -230,7 +231,8 @@ void Interface::printSortedYearReverse()
     vector<Person>listOfPersons = m_worker.sortListYearReverse(m_worker.getList());
     printList(listOfPersons);
 }
-int Interface::sortMenu()
+
+int Interface::sortMenu()           //Valmynd fyrir "sort list".
 {
     int answer;
     cout << "--------------------------------" << endl;
@@ -252,7 +254,6 @@ int Interface::sortMenu()
         cout << "4 - Reverse birth " << endl;
         cin >> answer;
     }
-
     return answer;
 }
 
