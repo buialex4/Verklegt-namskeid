@@ -92,25 +92,22 @@ int Interface::askSearchOrSort()
     int answer;
 
     cout << endl;
-    cout << "      LIST MENU      " << endl;
-    cout << "      ---------      " << endl;
+    cout << "       LIST MENU      " << endl;
+    cout << "       ---------      " << endl;
     cout << "1 - Search list" << endl;
     cout << "2 - Sort list" << endl;
     cout << "3 - Return to main menu" << endl;
 
     cin >> answer;
 
-    return answer;
-
-    cin >> answer;
     while(cin.fail() || answer < 1 || answer > 3)
     {
         cin.clear();
         cin.ignore(100,'\n');
         cout << "The input you entered is not a valid option. Pick again!" << endl;
         cout << endl;
-        cout << "      LIST MENU      " << endl;
-        cout << "      ---------      " << endl;
+        cout << "       LIST MENU      " << endl;
+        cout << "       ---------      " << endl;
         cout << "1 - Search list" << endl;
         cout << "2 - Sort list" << endl;
         cout << "3 - Return to main menu" << endl;

@@ -1,16 +1,31 @@
-B£i Alexander
+Turing, Alan
 m
-1991
--1Stef n
+1912
+1954Lovelace, Ada
+f
+1815
+1852Hopper, Grace
+f
+1906
+1992Church, Alonzo
 m
-1991
--1Eyç¢r Traustason
+1903
+1995Engelbart, Douglas
 m
-1995
--1B£i Alexander
+1925
+2013Borg, Anita
+f
+1949
+2003Denning, Dorothy
+f
+1945
+-1Clarke, Edmund
 m
-1991
--1Stef n
+1945
+-1Goldberg, Adele
+f
+1945
+-1Babbage, Charles
 m
-1991
--1
+1791
+1871
