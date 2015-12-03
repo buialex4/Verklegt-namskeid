@@ -1,5 +1,5 @@
-#include "interface.h"
-#include "person.h"
+#include "Interface.h"
+#include "Person.h"
 #include <ctype.h>
 
 Interface::Interface()

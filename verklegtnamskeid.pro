@@ -8,14 +8,14 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    interface.cpp \
     Worker.cpp \
-    person.cpp \
-    datalayer.cpp
+    Datalayer.cpp \
+    Interface.cpp \
+    Person.cpp
 
 HEADERS += \
-    interface.h \
     Worker.h \
-    person.h \
-    datalayer.h
+    Person.h \
+    Interface.h \
+    Datalayer.h
 

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "interface.h"
+#include "Interface.h"
 #include <windows.h>
 
 using namespace std;
